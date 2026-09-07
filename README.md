@@ -1,4 +1,3 @@
-# HPVpos-OPC-CC
 # Transcriptomic clustering identifies shared molecular programs across Human Papillomavirus-driven oropharyngeal and cervical carcinomas 
 Elena Colomboa†*, Armando G. Licatab†, Bahareh Gharehkhanisenejanib†, Stefano Cavalieria, Federico Rossignoli, Deborah Lenoci, Federico Pistore, Daniela Alterio, Domenica Lorussoe, Luca Boldrini, Giorgio Boganic, Umberto Leone Roberti Maggiore, Valentina Chiappa, Francesco Raspagliesi, Silvana Canevari, Lisa Licitraa, Marta Lucchetta*, Loris De Cecco* 
 
