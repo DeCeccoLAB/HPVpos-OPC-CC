@@ -98,9 +98,9 @@ pval <- c()
 for(i in p){
   print(i)
   subm <- m_woScore[which(m_woScore$cell_type == i),]
-  k <- kruskal.test(list(subm$score[which(subm$Cluster == 'Cl1')],
-                         subm$score[which(subm$Cluster== 'Cl2')],
-                         subm$score[which(subm$Cluster== 'Cl3')]))
+  k <- kruskal.test(list(subm$score[which(subm$Cluster == 'CC1')],
+                         subm$score[which(subm$Cluster== 'CC2')],
+                         subm$score[which(subm$Cluster== 'CC3')]))
   pval <- c(pval,k$p.value)
 }
 kw_table <- data.frame(p,pval)
@@ -114,16 +114,16 @@ kw_table <- kw_table[which(kw_table$adjPval < 0.05),]
 
 
 #Kruskal test & Wilcoxon test graph
-my_comparisons <- list(c("Cl1","Cl2"),c("Cl1","Cl3"),c("Cl2","Cl3")) #--> to define the pair-wise comparisons
+my_comparisons <- list(c("CC1","CC2"),c("CC1","CC3"),c("CC2","CC3")) #--> to define the pair-wise comparisons
 xCell_data %>% dplyr::filter(cell_type %in% (kw_table$cell_type)) %>%  ggplot(aes(x = Cluster, y = score)) +
   geom_boxplot(aes(color = Cluster), outlier.shape = NA, width = 0.8, lwd =0.8) +  geom_jitter(width = 0.15, alpha = 0.4) +
   scale_color_manual(values = c("red", "blue", "green")) +
   facet_wrap(vars(cell_type), scales = "free", ncol = 3) +
   stat_compare_means(comparisons = my_comparisons, size = 4, label.x.npc = 0.3, label.y.npc = 0.5, method = 'wilcox.test') + #--> add wilcoxon test to the boxplot
   stat_compare_means(method = 'kruskal.test',label.x.npc = 'centre', label.y.npc = 'top') +     
-  theme_bw() + ggtitle("xCell_significant_immune population")
+  theme_bw() + ggtitle("xCell_significant_immune population") +
 theme(axis.title.x = element_blank(),legend.position = 'none', axis.text = element_text(size=11),axis.title.y = element_text(size=11))
-ggsave('boxplot_xcell_signif_impop.pdf', height = 48, width = 15)
+ggsave('plots/boxplot_xcell_signif_impop.pdf', height = 48, width = 15)
 
 
 ################################################################################
