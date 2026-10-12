@@ -5,4 +5,4 @@ Human Papillomavirus (HPV) drives carcinogenesis in distinct anatomical sites, i
 
 
 ### Download data from Zenodo
-Download [here](https://zenodo.org/records/22673052) the required data to run the scripts.
+Download [here](https://doi.org/10.5281/zenodo.23317241) the required data to run the scripts.
